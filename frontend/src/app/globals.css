@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/* Custom animations and utilities */
+@layer utilities {
+  .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(
+      to right,
+      #f1f5f9 4%,
+      #e2e8f0 25%,
+      #f1f5f9 36%
+    );
+    background-size: 1000px 100%;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Loading skeleton styles */
+.skeleton {
+  @apply animate-pulse bg-slate-200 rounded;
+}
+
+.skeleton-text {
+  @apply h-4 bg-slate-200 rounded;
+}
+
+.skeleton-title {
+  @apply h-6 bg-slate-200 rounded;
+}
+
+/* Custom scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
