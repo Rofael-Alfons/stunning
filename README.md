@@ -89,7 +89,7 @@ A comprehensive full-stack web application that transforms website ideas into be
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Rofael-Alfons/stunning.git
    cd stunning
    ```
 
